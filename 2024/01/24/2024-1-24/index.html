@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>2024/1/24 | Zavier的闪念银河</title><meta name="author" content="Zavier Wang,wangzw0353@outlook.com"><meta name="copyright" content="Zavier Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="可以开始考虑手上还需要做什么的问题了。 首先是上集群的问题，目前我的项目还只是单机的状态，flink job的提交过程其实等于基本没有。需要重点看看这个部分。   flink集群如何搭建,以及作业如何提交  我觉得这个涉及到yarn集群的搭建问题或者是考虑看看k8s的内容, 如何管理自己的集群 提交的话目前好像直接从main走就完事了,但是似乎还是不太清楚怎么设置自己的resource manag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024&#x2F;1&#x2F;24">
+<meta property="og:url" content="http://example.com/2024/01/24/2024-1-24/index.html">
+<meta property="og:site_name" content="Zavier的闪念银河">
+<meta property="og:description" content="可以开始考虑手上还需要做什么的问题了。 首先是上集群的问题，目前我的项目还只是单机的状态，flink job的提交过程其实等于基本没有。需要重点看看这个部分。   flink集群如何搭建,以及作业如何提交  我觉得这个涉及到yarn集群的搭建问题或者是考虑看看k8s的内容, 如何管理自己的集群 提交的话目前好像直接从main走就完事了,但是似乎还是不太清楚怎么设置自己的resource manag">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar_rock.jpg">
+<meta property="article:published_time" content="2024-01-24T05:50:51.000Z">
+<meta property="article:modified_time" content="2024-01-24T08:05:30.995Z">
+<meta property="article:author" content="Zavier Wang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar_rock.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/24/2024-1-24/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2024/1/24',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-01-24 16:05:30'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar_rock.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Zavier的闪念银河"><span class="site-name">Zavier的闪念银河</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2024/1/24</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-24T05:50:51.000Z" title="发表于 2024-01-24 13:50:51">2024-01-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-24T08:05:30.995Z" title="更新于 2024-01-24 16:05:30">2024-01-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Diary/">Diary</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2024/1/24"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>可以开始考虑手上还需要做什么的问题了。</p>
+<p>首先是上集群的问题，目前我的项目还只是单机的状态，flink job的提交过程其实等于基本没有。需要重点看看这个部分。</p>
+<ul>
+<li><input disabled="" type="checkbox"> flink集群如何搭建,以及作业如何提交</li>
+</ul>
+<p>我觉得这个涉及到yarn集群的搭建问题或者是考虑看看k8s的内容, 如何管理自己的集群</p>
+<p>提交的话目前好像直接从main走就完事了,但是似乎还是不太清楚怎么设置自己的resource manager?</p>
+<p>需要试着搭建一下三个虚拟机, 然后跑跑看几种作业的提交方式</p>
+<ul>
+<li><input disabled="" type="checkbox"> hadoop和spark的常见知识简单的过一遍</li>
+<li><input disabled="" type="checkbox"> spring可能是个未来可能的学习路径,但是我并不打算学这种自己一点思路都没有的领域</li>
+<li><input disabled="" type="checkbox"> leetcode,每日两题?</li>
+</ul>
+<p>海投</p>
+<p>简历正常流程: </p>
+<p>工作经历:只有一段助教经历,相关性不大</p>
+<p>项目:</p>
+<p>个人总结: 比较重要,大数据开发,自学的能力</p>
+<p>这段写成实习, 线上面对两百多个学生. 做实习经历,主要是理论方面, 技术方面的问题没有实操.</p>
+<p>两个项目: </p>
+<p>项目要素: 职位.名称,时间,项目背景介绍(简述干了什么),项目职责(过程描述),项目业绩(实现了那些功能,如期交付)</p>
+<p>个人陈述写的过少: 个人优势,雅思7做突出. 根据职业需求拓展个人陈述(), 教育背景的优势, 技术方面的能力. </p>
+<p>大数据针对: </p>
+<p>处理分离大规模数据: IEEE</p>
+<ul>
+<li><input disabled="" type="checkbox"> 小型的项目处理能力</li>
+<li><input disabled="" type="checkbox"> 重新编排一下项目的结构</li>
+</ul>
+<p>项目要素<br><strong>NBA比赛记录的数据处理（flink）</strong><br>项目角色：项目负责人<br>起止时间：<strong>2023年11月 – 2024年1月</strong><br>项目描述：此项目主要工作是对抓取的篮球比赛数据进行处理. 包括清洗,重新设计并优化原有数据结构. 减少不必要的内存开销和检测元数据中的数据丢失。数据来源: FiveThiryEight.<br>项目职责：</p>
+<ol>
+<li><p>拆分原有数据结构并重新设计来减少原始数据中的内存开销,   原始表中每行记录了raptor_elo，calm_elo和elo三种量化体系的数据和依此计算出的胜率，但大部分球队只包含了一两种。因此可单独开一个子表elo，每列仅记录一种量化数据，减少了不必要的内存消耗。剩余的数据在合并了部分线性相关的列后单独存储，从而减少存储的开销。</p>
+</li>
+<li><p>去除数据中的冗余部分</p>
+<p>每场比赛记录了球队每种量化数据在比赛前后的数据变化, 球队某一个时间点的量化数据会同时出现在相邻的两场比赛记录中. 在拆分原有数据的过程写入新表的过程中中可去除这些重复数据.此外原始数据中存在线性相关的列, 这些冗余的列经过分组后只挑选一列写入新数据库中.</p>
+</li>
+<li><p>检测数据中的缺失</p>
+<p>丢失的数据可以通过判断同一球队在相邻比赛中elo是否连续来判断. 当原始数据中相邻比赛elo不连续则可视为数据丢失写入侧通道中等待进一步处理. 匹配的过程中通过使用跳过策略来避免重复. 此外每个pattern设置了上线来避免过大的内存消耗.</p>
+</li>
+<li><p>迟到数据和补充数据的处理</p>
+<p>迟到的数据和后续补充的数据汇入到同一个数据流中集中处理. 当有新数据流入时写入处理函数的状态中并设置一个定时器, 一段时间或者状态量足够大时一次性写入到数据库中, 避免频繁的数据库访问消耗太多资源</p>
+</li>
+</ol>
+<p>项目业绩：</p>
+<p>​	去除了原始数据中的冗余部分. 改进了原有的数据结构, 新的数据结构在精简的同时也可很方便的用于后续针对单个球队的分析. 成功识别测试样例中缺失的比赛数据.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Zavier Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/24/2024-1-24/">http://example.com/2024/01/24/2024-1-24/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Zavier的闪念银河</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar_rock.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/25/Chapter-1/" title="Chapter_-1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Chapter_-1</div></div></a></div><div class="next-post pull-right"><a href="/2024/01/23/2024-1-23/" title="2024/1/23"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2024/1/23</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar_rock.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zavier Wang</div><div class="author-info__description">认清现实，三分钟热度是我的常态。但这并不代表那些一闪而过的念头只是梦幻泡影。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/05/JAVA%E9%9D%A2%E8%AF%95/" title="JAVA面试">JAVA面试</a><time datetime="2024-02-05T03:46:32.000Z" title="发表于 2024-02-05 11:46:32">2024-02-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95%E6%8B%BE%E9%81%97/" title="大数据面试拾遗">大数据面试拾遗</a><time datetime="2024-02-04T06:05:57.000Z" title="发表于 2024-02-04 14:05:57">2024-02-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/03/%E5%8D%8E%E4%B8%BA%E7%AC%94%E8%AF%95/" title="华为笔试">华为笔试</a><time datetime="2024-02-03T15:30:26.000Z" title="发表于 2024-02-03 23:30:26">2024-02-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/03/%E5%8F%8B%E5%A1%94%E7%AC%94%E8%AF%95/" title="友塔笔试">友塔笔试</a><time datetime="2024-02-03T13:14:26.000Z" title="发表于 2024-02-03 21:14:26">2024-02-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/28/2024-1-28/" title="2024/1/28">2024/1/28</a><time datetime="2024-01-27T16:36:08.000Z" title="发表于 2024-01-28 00:36:08">2024-01-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Zavier Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
