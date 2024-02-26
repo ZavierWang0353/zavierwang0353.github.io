@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>springboot笔记 | Zavier的闪念银河</title><meta name="author" content="Zavier Wang,wangzw0353@outlook.com"><meta name="copyright" content="Zavier Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Springboot 和 Spring的区别。Spring算是Springboot的前身，改进的地方主要是在配置方面的自动化。 Spring Boot的配置依旧沿用maven（也有用gradle的） 1234&lt;dependency&gt;	&lt;groupId&gt; org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;sp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot笔记">
+<meta property="og:url" content="http://example.com/2024/02/05/springboot%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Zavier的闪念银河">
+<meta property="og:description" content="Springboot 和 Spring的区别。Spring算是Springboot的前身，改进的地方主要是在配置方面的自动化。 Spring Boot的配置依旧沿用maven（也有用gradle的） 1234&lt;dependency&gt;	&lt;groupId&gt; org.springframework.boot&lt;&#x2F;groupId&gt;	&lt;artifactId&gt;sp">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar_rock.jpg">
+<meta property="article:published_time" content="2024-02-05T14:16:48.000Z">
+<meta property="article:modified_time" content="2024-02-15T10:56:49.645Z">
+<meta property="article:author" content="Zavier Wang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar_rock.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/02/05/springboot%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'springboot笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-15 18:56:49'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar_rock.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Zavier的闪念银河"><span class="site-name">Zavier的闪念银河</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">springboot笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-02-05T14:16:48.000Z" title="发表于 2024-02-05 22:16:48">2024-02-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-15T10:56:49.645Z" title="更新于 2024-02-15 18:56:49">2024-02-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Work/">Work</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="springboot笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Springboot 和 Spring的区别。Spring算是Springboot的前身，<strong>改进</strong>的地方主要是在<strong>配置方面的自动化。</strong></p>
+<p>Spring Boot的配置依旧沿用maven（也有用gradle的）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt; org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>根目录下的<code>application.property</code>记录了一些基本的配置比如url和端口这一类</p>
+<p>spring boot的参数配置来源多样且有优先级:</p>
+<ul>
+<li>命令行</li>
+<li>java系统属性</li>
+<li>操作系统环境变量</li>
+<li>application</li>
+</ul>
+<p><strong>定位视图</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#假设从根目录出发</span><br><span class="line">@RequestMapping(&quot;/index&quot;)</span><br><span class="line">public String index()&#123;</span><br><span class="line">	return &quot;index&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#application.properties中提供域名解析的前后缀</span><br><span class="line">spring.mvc.view.prefix=/WEB-INF/jsp/</span><br><span class="line">spring.mvc.view.suffix=.jsp</span><br><span class="line"></span><br><span class="line"># 因此在url中出现index时,首先index()函数返回&quot;index&quot;,跟前后缀组合后,目标jps位置:</span><br><span class="line"># /WEB-INF/jsp/index.jsp (html+javascript)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Spring-IoC"><a href="#Spring-IoC" class="headerlink" title="Spring IoC"></a>Spring IoC</h3><p>管理JAVA Bean的容器(java bean可视作一种可以被序列化的类)</p>
+<p>IoC可通过名称和类别来寻找类, 特别的分为两种方式原型(prototype)和单例(singleton)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 标注某个方法</span><br><span class="line">@Bean(name=&quot;user&quot;)</span><br><span class="line"># 标注某个类</span><br><span class="line">@Component(&quot;user&quot;)</span><br><span class="line">public class user&#123;</span><br><span class="line">	# 注明实际录入bean时的值</span><br><span class="line">	@Value(&quot;1&quot;)</span><br><span class="line">	private long id;</span><br><span class="line">&#125;</span><br><span class="line">@ComponentScan(</span><br><span class="line">	# 指名org.example包下面的所有类</span><br><span class="line">	&quot;org.example.*&quot;,</span><br><span class="line">	# 指名某个类名</span><br><span class="line">	basePackageClasses=&#123;&quot;Classname.class&quot;&#125;,</span><br><span class="line">	excludeFilters=&#123;@Filter(classes=&#123;Classname.class&#125;)&#125;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>@Bean在引入第三方库的时候比较好用, 一般都会有内置的构造函数</p>
+<p>@Autowired可用在类的内部, 会自动注入依赖类,但是autowired不能处理歧义接口</p>
+<ol>
+<li>在类实现接口的时候注释**@Primary**, 但多个类声明primary的话依旧不能解决冲突问题</li>
+<li>在autowired注解@Qualified(“Classname”)</li>
+</ol>
+<p>Bean的生命周期</p>
+<ol>
+<li>扫描时的资源定位</li>
+<li>bean的定义(不在IoC)</li>
+<li>IoC装在Bean定义</li>
+<li>创建Bean对象</li>
+<li>依赖注入</li>
+</ol>
+<p>在Bean注入时, 可在类中重写相关函数,在实例化&#x2F;初始化&#x2F;摧毁的时候都可以重载函数来进行处理</p>
+<p>属性文件默认从 application.property中获取,相关的依赖包名:  spring-boot-configuration-processor</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#使用注解调取application.property中的值</span><br><span class="line">@Value(&quot;$&#123;database.drivername&#125;&quot;))</span><br><span class="line">#也可调用执行语句(返回当前时间), ?表示该值存在才有后续的函数执行</span><br><span class="line">@Value(&quot;#(T(System)?.currentTimeMillis())&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>Bean的作用域可以在注解后声明,默认为prototype. 还有singleton, session和application. 主要是看在哪段区域内返回同一个bean(如prototype永远返回不一样的bean)</p>
+<p>Profile可以用于调试. 在Bean注解下写注明生效的profile. 同时如果在根目录新建application-{profile.name}.properties, 也会沿用新的设置</p>
+<p>在启动项目时可标注profile</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 也可以设置default,但是会先check active 再check default</span><br><span class="line">JAVA_OPTS=&quot;&quot;-Dspring.profiles.active=dev&quot;</span><br></pre></td></tr></table></figure>
+
+<p>xml也可用来定义bean</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># xml文件中</span><br><span class="line">&lt;bean Id=&quot;beanname&quot; Class=&quot;full class name&quot;/&gt;</span><br><span class="line"># java文件中</span><br><span class="line">@ImportResource(value=&#123;&quot;classPath:xml class path&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Spring-AOP"><a href="#Spring-AOP" class="headerlink" title="Spring AOP"></a>Spring AOP</h3><h4 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h4><p>给核心函数打包，包括前置工作和后续处理，也会针对函数运行结果执行不同的代码（try except final）</p>
+<h4 id="ProxyBean"><a href="#ProxyBean" class="headerlink" title="ProxyBean"></a>ProxyBean</h4><p>创建需要三个参数，类加载器（实际逻辑），接口（定义after，before，return这些），逻辑实现（after，before，return内部顺序的实现，这部分springboot源码承担）</p>
+<h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><p>用途：动态环境配置，自动err处理</p>
+<p>常用属于：</p>
+<ul>
+<li>join point，需要被包装的方法</li>
+<li>point cut， 分辨众多join point的正则式</li>
+<li>advice，before，after等函数的定义</li>
+<li>target， 一般为join point的父对象</li>
+<li>introduction，用@DeclareParents注入后可通过强制类型转换来调用新增的功能。</li>
+<li>aspect，可能会存在多个切面，可用order来定义优先级，优先级下呈嵌套关系。</li>
+</ul>
+<h3 id="DataBase"><a href="#DataBase" class="headerlink" title="DataBase"></a>DataBase</h3><p>在maven中添加相关依赖，在application.property中添加以下依赖：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>数据库地址</td>
+</tr>
+<tr>
+<td>user</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>driver</td>
+<td>可选，springboot会尽量自动选driver</td>
+</tr>
+<tr>
+<td>max_idle</td>
+<td>最大等待连接</td>
+</tr>
+<tr>
+<td>max-active</td>
+<td>最大活跃</td>
+</tr>
+<tr>
+<td>max-wait</td>
+<td>最大等待</td>
+</tr>
+<tr>
+<td>initial-size</td>
+<td>初始化连接量</td>
+</tr>
+</tbody></table>
+<p>jdbcTemplate每次在有新的请求进入时会重新建立一次到数据库的连接。</p>
+<p>jdbcTemplate.query(带参数的sql语句,sql语句中的参数, 对应数据库类型的构建映射）</p>
+<p>JPA不用像jdbctemplate一样手写类型，而是在类的定义通过使用注解来和类联系起来。</p>
+<p>@EnableJpaRepositories和@EntityScan指定JPA接口和JPA实体类的内容</p>
+<p> 同时JPA的语言支持（JPQL）和Hibernate（HQL）是很类似的。非常灵活。也包括模糊查询。</p>
+<p>MyBatis更倾向于用xml，但也可以使用注解</p>
+<p>首先需要一个数据类，其中针对特殊的类型比如enum需要定义一个typehandler的实体类</p>
+<p>在typerhandler&lt;自定义数据类名&gt;前定义@MappedJDBCType(jdbc中的数据类型)和@MappedType(java类型)来实现转换，主要的方法有getNullableResult和setNonNullbaleParameter.</p>
+<p>之后在xml文件中链接sql语句和对应的类中的方法(类中可为虚函数),类前表明@respository来完成自动注入.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Zavier Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/02/05/springboot%E7%AC%94%E8%AE%B0/">http://example.com/2024/02/05/springboot%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Zavier的闪念银河</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar_rock.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/02/06/mysql%E7%AC%94%E8%AE%B0/" title="mysql笔记"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">mysql笔记</div></div></a></div><div class="next-post pull-right"><a href="/2024/02/05/JAVA%E9%9D%A2%E8%AF%95/" title="JAVA面试"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JAVA面试</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar_rock.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zavier Wang</div><div class="author-info__description">认清现实，三分钟热度是我的常态。但这并不代表那些一闪而过的念头只是梦幻泡影。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-IoC"><span class="toc-number">1.</span> <span class="toc-text">Spring IoC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-AOP"><span class="toc-number">2.</span> <span class="toc-text">Spring AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A6%E5%AE%9A"><span class="toc-number">2.1.</span> <span class="toc-text">约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ProxyBean"><span class="toc-number">2.2.</span> <span class="toc-text">ProxyBean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AOP"><span class="toc-number">2.3.</span> <span class="toc-text">AOP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataBase"><span class="toc-number">3.</span> <span class="toc-text">DataBase</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/12/%E6%96%B0%E5%B9%B4%E9%9A%8F%E7%AC%94/" title="新年随笔">新年随笔</a><time datetime="2024-02-12T00:19:06.000Z" title="发表于 2024-02-12 08:19:06">2024-02-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/06/mysql%E7%AC%94%E8%AE%B0/" title="mysql笔记">mysql笔记</a><time datetime="2024-02-06T03:45:50.000Z" title="发表于 2024-02-06 11:45:50">2024-02-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/05/springboot%E7%AC%94%E8%AE%B0/" title="springboot笔记">springboot笔记</a><time datetime="2024-02-05T14:16:48.000Z" title="发表于 2024-02-05 22:16:48">2024-02-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/05/JAVA%E9%9D%A2%E8%AF%95/" title="JAVA面试">JAVA面试</a><time datetime="2024-02-05T03:46:32.000Z" title="发表于 2024-02-05 11:46:32">2024-02-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/02/04/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95%E6%8B%BE%E9%81%97/" title="大数据面试拾遗">大数据面试拾遗</a><time datetime="2024-02-04T06:05:57.000Z" title="发表于 2024-02-04 14:05:57">2024-02-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Zavier Wang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
